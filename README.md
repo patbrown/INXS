@@ -30,7 +30,7 @@
 - [How can I help?](#contribute)
 - [Did you show gratitude?](#gratitude)
 
-[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.patbrown/inxs.svg)](https://clojars.org/org.clojars.patbrown/inxs)
+[![Clojars Project](https://img.shields.io/clojars/v/tools.drilling/inxs.svg)](https://clojars.org/tools.drilling/inxs)
 
 ## What is it? <a name = "what"></a>
 It provides a few public functions.
