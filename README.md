@@ -38,11 +38,11 @@ It provides a few public functions.
 - ls-ixfn lists all interceptor fns on the classpath.
 - exec runs a chain by first finding and hydrating the interceptors that are referenced by keywords.
 ## Why does it exist? <a name = "why"></a>
-Speed and ease for the user. It's a low-cost high-leverage change. Here are the benefits;
+Speed and ease for the user. It's a low-cost high-leverage change. It allows you to write interceptor fns as well construct chains and calls to chains without having to think about the system as a whole. Here are the benefits;
 1. Interceptors and their non interceptor couterparts are one in the same. IXFNs are prefixed `ixfn-your-symbol` while plain fns are simply `your-symbol`. You use `your-symbol` like any other fn.
 2. Interceptor namespaces do not need to be required to be used, they simply need to be present on the classpath.
 3. Chains can be dynamically constructed via keywords and not symbols. This makes constructing chains programmatically at runtime dead simple. 
-4. Using the supplied `exec` fn an extra argument can be provided to control the return value. This extra argument is also simply a keyword to extract or a collection to use with select keys. This adds to the runtime dynamism of using INXS.
+4. Using the supplied `exec` fn an extra argument can be provided to control the return value. This extra argument is also simply a keyword to extract or a collection of keywords to use with select keys. This adds to the runtime dynamism of using INXS.
 ## What does it cost? <a name = "cost"></a>
 This ease and speed doesn't come free. Here are the negatives;
 1. `ixfn` is a macro.

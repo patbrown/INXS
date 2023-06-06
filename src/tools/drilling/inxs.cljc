@@ -1,24 +1,13 @@
 (ns tools.drilling.inxs
-  (:require [exoscale.interceptor :as ix]))
+  (:require [exoscale.interceptor :as ix]
+            [tools.drilling.inxs.ixfn :as ixfn]))
 
-(defmacro ixfn [sym body]
-  (let [ixfn-sym# (symbol (str "ixfn-" sym))
-        sym-as-kw# (keyword (str sym))
-        b# (if (map? body)
-             body
-             {:enter body})]
-    `(do
-       (def ~sym (if (map? ~body)
-                   (:enter ~body)
-                   ~body))
-       (def ~(with-meta ixfn-sym# {:ixfn? true
-                                   :ixfn/var `(var ~ixfn-sym#)
-                                   :ixfn/id sym-as-kw#})
-         ~(merge {:name sym-as-kw#}
-                 b#)))))
+(def ixfn ixfn/ixfn)
+
+(def ^:dynamic *all-ns* [])
 
 (defn get-meta []
-      (->> (all-ns) (mapcat ns-interns) (keep #(-> % second meta))))
+  (->> #?(:clj (all-ns) :cljs *all-ns*) (mapcat ns-interns) (keep #(-> % second meta))))
 
 (defn ixfns
   "Get the ixfns available."
