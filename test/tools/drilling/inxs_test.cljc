@@ -3,4 +3,4 @@
 
 (deftest test-runner-smoke
   (testing "Test runner working?"
-    (is (= 1 1))))
+    (is (= 2 2))))
