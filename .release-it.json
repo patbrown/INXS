@@ -1,7 +1,7 @@
 {
   "hooks": {
     "before:init": ["npm run clj-test"],
-    "after:bump": ["npx auto-changelog -p && git tag -a v${version} -m v${version}"]
+    "after:bump": ["npx auto-changelog -p"]
   },
   "git": {
     "requireBranch": "main",
