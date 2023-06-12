@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-      "release": "release-it",
+    "release": "release-it",
     "clj-test": "bin/kaocha --fail-fast"
   },
   "author": "",
@@ -16,6 +16,7 @@
     "@commitlint/config-conventional": "^17.6.5"
   },
   "devDependencies": {
+    "auto-changelog": "^2.4.0",
     "husky": "^8.0.3",
     "release-it": "^15.11.0"
   }
