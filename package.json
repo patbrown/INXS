@@ -4,12 +4,17 @@
   "description": "Interceptors macros.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "prepare": "husky install",
+      "clj-test": "bin/kaocha --fail-fast"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
   }
 }
