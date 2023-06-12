@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "before:init": ["npm run clj-test"],
+    "after:bump": ["npx auto-changelog -p"],
+    "after:git:release": ["git checkout dev", "git merge main", "git push origin dev"]
+  },
+  "git": {
+    "requireBranch": "main",
+    "commit": true,
+    "commitMessage": "chore(release): ${version}",
+    "commitArgs": "",
+    "tag": true,
+    "tagName": "${version}",
+    "tagAnnotation": "${version}",
+    "push": true,
+    "requireCommits": true,
+    "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "${version}",
+    "tokenRef": "GITHUB_TOKEN"
+  },
+  "npm": {
+    "publish": false
+  }
+}
