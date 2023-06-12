@@ -9,7 +9,7 @@
     "commitMessage": "chore(release): ${version}",
     "commitArgs": "",
     "tag": true,
-    "tagName": "${version}",
+    "tagName": "v${version}",
     "tagAnnotation": "${version}",
     "push": true,
     "requireCommits": true,
